@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {useAuth} from "../contexts/auth-context";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Signup = () => {
   const emailRef = useRef()
@@ -20,7 +20,7 @@ const Signup = () => {
       await signup(emailRef.current.value, passwordRef.current.value)
       navigate("/login")
     } catch(error) {
-      setError(error)
+      setError(error.message)
     }
   }
   return (
@@ -28,7 +28,7 @@ const Signup = () => {
       <h1>Signup</h1>
       {
         error &&
-        <div className="alert-danger">
+        <div className="alert-danger mt-2 p-2">
           {error}
         </div>
       }
@@ -40,7 +40,11 @@ const Signup = () => {
       <input placeholder="confirm password" className="form-control mb-2"
         ref={passwordConfirmRef}
         type="password"/>
-      <button disabled={loading} onClick={handleSignup} className="btn btn-primary w-100">Sign Up</button>
+      <button disabled={loading} onClick={handleSignup}
+              className="btn btn-primary w-100 mb-2">Sign Up</button>
+      <div>
+        <Link to="/">Login</Link>
+      </div>
     </div>
   );
 };

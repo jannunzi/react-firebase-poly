@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useAuth} from "../contexts/auth-context";
 
-const Home = () => {
-  const {currentUser, signout} = useAuth()
+const Administrator = () => {
   const [error, setError] = useState()
+  const {currentUser, signout} = useAuth()
   const navigate = useNavigate()
   const handleSignout = () => {
     try {
@@ -14,26 +14,21 @@ const Home = () => {
       setError(e.message)
     }
   }
-  
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Administrator</h1>
       { error &&
-        <div className="alert-danger mb-2 p-2">
-          {error}
-        </div>
+      <div className="alert-danger mb-2 p-2">
+        {error}
+      </div>
       }
-      {currentUser.email}
-      <br/>
-      <Link to="/profile">Profile</Link>
-      <div>
       <button className="btn btn-danger"
               onClick={handleSignout}>
         Signout
       </button>
-      </div>
+      {JSON.stringify(currentUser)}
     </div>
   );
 };
 
-export default Home;
+export default Administrator;

@@ -5,6 +5,7 @@ import Login from "./screens/login";
 import Profile from "./screens/profile";
 import Home from "./screens/home";
 import ProtectedRoute from "./routes/protected-route";
+import Administrator from "./screens/admin";
 
 function App() {
   return (
@@ -18,7 +19,14 @@ function App() {
               </ProtectedRoute>}/>
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/" element={<Login/>}/>
-            <Route path="/profile" element={<Profile/>}/>
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <Profile/>
+              </ProtectedRoute>}/>
+            <Route path="/admin" element={
+              <ProtectedRoute>
+                <Administrator/>
+              </ProtectedRoute>}/>
           </Routes>
         </AuthProvider>
       </BrowserRouter>

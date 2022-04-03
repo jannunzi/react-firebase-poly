@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {useAuth} from "../contexts/auth-context";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef();
@@ -29,8 +29,11 @@ const Login = () => {
       <input type="email" className="form-control mb-2" ref={emailRef}/>
       <input type="password" className="form-control mb-2" ref={passwordRef}/>
       <button onClick={handleLogin}
-              className="btn btn-primary w-100">
+              className="btn btn-primary w-100 mb-2">
         Login</button>
+      <div>
+        <Link to="/signup">Sign Up</Link>
+      </div>
     </div>
   );
 };
