@@ -17,7 +17,7 @@ const Signup = () => {
     try {
       setError('')
       await signup(emailRef.current.value, passwordRef.current.value)
-      navigate("/login")
+      navigate("/")
     } catch(error) {
       setError(error.message)
     }

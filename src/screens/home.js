@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../contexts/auth-context";
+import TuitsList from "../components/tuits-list";
 
 const Home = () => {
   const {currentUser, signout} = useAuth()
@@ -23,6 +24,7 @@ const Home = () => {
           {error}
         </div>
       }
+      <TuitsList/>
       {currentUser.email}
       <br/>
       <Link to="/profile">Profile</Link>
