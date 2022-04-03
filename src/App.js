@@ -1,6 +1,6 @@
-import Signup from "./screens/signup";
-import {AuthProvider} from "./contexts/auth-context";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {AuthProvider} from "./contexts/auth-context";
+import Signup from "./screens/signup";
 import Login from "./screens/login";
 import Profile from "./screens/profile";
 import Home from "./screens/home";

@@ -8,7 +8,6 @@ const Signup = () => {
   const passwordConfirmRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const handleSignup = async (e) => {
     e.preventDefault()
@@ -40,7 +39,7 @@ const Signup = () => {
       <input placeholder="confirm password" className="form-control mb-2"
         ref={passwordConfirmRef}
         type="password"/>
-      <button disabled={loading} onClick={handleSignup}
+      <button onClick={handleSignup}
               className="btn btn-primary w-100 mb-2">Sign Up</button>
       <div>
         <Link to="/">Login</Link>
