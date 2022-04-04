@@ -10,7 +10,7 @@ const Login = () => {
   const { login } = useAuth()
   const handleLogin = async () => {
     try {
-      setError('')
+      setError("")
       await login(emailRef.current.value, passwordRef.current.value)
       navigate("/home")
     } catch(error) {

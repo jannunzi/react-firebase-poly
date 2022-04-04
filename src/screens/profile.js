@@ -27,7 +27,9 @@ const Profile = () => {
         Signout
       </button>
       <Link to="/admin">Admin</Link>
-      {JSON.stringify(currentUser)}
+      <pre>
+        {JSON.stringify(currentUser, null, 2)}
+      </pre>
     </div>
   );
 };

@@ -49,8 +49,7 @@ const TuitsList = () => {
           <li key={tuit.id} className="list-group-item">
             <span onClick={() => handleDeleteTuit(tuit)} className="float-end fs-2">&times;</span>
             <div>
-              {tuit.author}
-              {tuit.id}
+              @{tuit.author.split("@")[0]}
             </div>
             <div>
               {tuit.tuit}

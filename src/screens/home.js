@@ -25,7 +25,6 @@ const Home = () => {
         </div>
       }
       <TuitsList/>
-      {currentUser.email}
       <br/>
       <Link to="/profile">Profile</Link>
       <div>
