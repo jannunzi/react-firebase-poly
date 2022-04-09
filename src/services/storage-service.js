@@ -1,7 +1,16 @@
-import {getStorage, ref, getDownloadURL, listAll} from "firebase/storage"
+import {getStorage, ref, getDownloadURL,
+  listAll,
+  uploadBytes} from "firebase/storage"
+
 const storage = getStorage()
 
 const storageRef = ref(storage)
+
+export const uploadImage = (file) => {
+  const imageRef = ref(
+    storage, file.name)
+  return uploadBytes(imageRef, file)
+}
 
 export const getImageSrc = (image) => {
   const imageRef = ref(storage, image)
