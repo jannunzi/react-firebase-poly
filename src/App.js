@@ -6,6 +6,7 @@ import Profile from "./screens/profile";
 import Home from "./screens/home";
 import ProtectedRoute from "./routes/protected-route";
 import Administrator from "./screens/admin";
+import Media from "./screens/media";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
+            <Route path="/media" element={<Media/>}/>
             <Route path="/home" element={
               <ProtectedRoute>
                 <Home/>
