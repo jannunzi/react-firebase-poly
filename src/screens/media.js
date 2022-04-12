@@ -24,30 +24,40 @@ const Media = () => {
       storageService.uploadImage(file)
     })
   }
+  const handleDelete = (image) => {
+    storageService.deleteImage(image)
+    const newImages = srcs.map(src => src !== image)
+    setSrcs(newImages)
+  }
   return (
     <div>
       <h1>Media</h1>
-<button
-  onClick={handleUpload}
-  className="float-end btn btn-primary">
-  Upload
-</button>
-<input
-  multiple
-  ref={filesRef}
-  type="file"
-  className="form-control w-75"
-/>
+        <button
+          onClick={handleUpload}
+          className="float-end btn btn-primary">
+          Upload
+        </button>
+        <input
+          multiple
+          ref={filesRef}
+          type="file"
+          className="form-control w-75"
+        />
       <hr/>
       <img src={src} height={100}/>
       <hr/>
-      {
-        srcs.map(src => 
-          <img key={src}
-               src={src}
-               height={100}/>
-        )
-      }
+{
+  srcs.map(src => 
+    <div key={src}>
+      <img src={src} height={100}/>
+      <button
+        onClick={() => handleDelete(src)}
+        className="btn btn-danger">
+        Delete
+      </button>
+    </div>
+  )
+}
       <Json>
         {srcs}
       </Json>

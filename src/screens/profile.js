@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../contexts/auth-context";
+import Media from "./media";
 
 const Profile = () => {
   const [error, setError] = useState()
@@ -27,6 +28,8 @@ const Profile = () => {
         Signout
       </button>
       <Link to="/admin">Admin</Link>
+      <hr/>
+      <Media/>
       <pre>
         {JSON.stringify(currentUser, null, 2)}
       </pre>
