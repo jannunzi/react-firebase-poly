@@ -25,7 +25,7 @@ const TuitsList = () => {
     setTuits(tuits)
   }
   useEffect(() => {
-    getMyTuits()
+    getAllTuits()
   }, [])
   const handleDeleteTuit = async (tuit) => {
     await tuitsService.deleteTuit(tuit.id)

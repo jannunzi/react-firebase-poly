@@ -7,6 +7,7 @@ import Home from "./screens/home";
 import ProtectedRoute from "./routes/protected-route";
 import Administrator from "./screens/admin";
 import Media from "./screens/media";
+import SuperChat from "./screens/super-chat";
 
 function App() {
   return (
@@ -28,7 +29,13 @@ function App() {
             <Route path="/admin" element={
               <ProtectedRoute>
                 <Administrator/>
-              </ProtectedRoute>}/>
+              </ProtectedRoute>}
+            />
+            <Route path="/super-chat" element={
+              <ProtectedRoute>
+                <SuperChat/>
+              </ProtectedRoute>
+            }/>
           </Routes>
         </AuthProvider>
       </BrowserRouter>

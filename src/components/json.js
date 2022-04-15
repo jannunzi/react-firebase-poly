@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Json = ({children}) => {
+const Json = ({data}) => {
   return (
     <pre>
-      {JSON.stringify(children, null, 2)}
+      {JSON.stringify(data, null, 2)}
     </pre>
   );
 };

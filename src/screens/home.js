@@ -27,6 +27,7 @@ const Home = () => {
       <TuitsList/>
       <br/>
       <Link to="/profile">Profile</Link>
+      <Link to="/super-chat">Super Chat</Link>
       <div>
       <button className="btn btn-danger"
               onClick={handleSignout}>

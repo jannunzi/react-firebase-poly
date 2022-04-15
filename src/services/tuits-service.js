@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore"
 
 const tuitsCollection = collection(db, 'tuits')
+
 export const addTuit = (tuit) => {
   return addDoc(tuitsCollection, tuit)
 }
