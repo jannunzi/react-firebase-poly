@@ -1,20 +1,20 @@
-.my-message {
+.super-chat .my-message {
     float: right;
     background-color: green;
     color: white;
     padding: 10px;
     border-radius: 10px;
 }
-.not-my-message {
+.super-chat .not-my-message {
     float: left;
     background-color: blue;
     color: white;
     padding: 10px;
     border-radius: 10px;
 }
-.list-group-item {
+.super-chat .list-group-item {
     border: none;
 }
-.list-group {
+.super-chat .list-group {
     border: 1px solid lightgrey;
 }

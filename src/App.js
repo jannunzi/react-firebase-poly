@@ -8,6 +8,7 @@ import ProtectedRoute from "./routes/protected-route";
 import Administrator from "./screens/admin";
 import Media from "./screens/media";
 import SuperChat from "./screens/super-chat";
+import JsonRenderer from "./screens/json-renderer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
+            <Route path="/json" element={<JsonRenderer/>}/>
             <Route path="/media" element={<Media/>}/>
             <Route path="/home" element={
               <ProtectedRoute>

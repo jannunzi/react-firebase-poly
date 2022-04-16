@@ -33,7 +33,7 @@ const SuperChat = () => {
     await service.deleteMessage(message.id)
   }
   return (
-    <div>
+    <div className="super-chat">
       <h1>Super Chap</h1>
       {/*<div>*/}
         <ul className="list-group">
